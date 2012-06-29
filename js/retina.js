@@ -12,7 +12,7 @@ So:
 	
 	<img src="img.png" height="100" width="100" />
 	
-	$.retina();
+	$(document).retina();
 
 Copyright (c) 2012 Todd Greco
 
