@@ -11,30 +11,130 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<meta name="viewport" content="width=device-width">
+    <!-- pretty pretty icon -->   
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
+
+	<meta name="viewport" content="width=device-width">
+	
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/shCore.css">
+	<link rel="stylesheet" href="css/shCoreEclipse.css">
 	<link rel="stylesheet" href="css/style.css">
 
 	<script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-<header>
 
+
+
+<header id="header">
+	<div class="outerBox  clearfix">
+		<img class="floatRight centerImg" src="img/img.png" height="100" width="100" />
+		<h1>jQuery Retina Display Plug-in</h1><br /><br />
+		A small jQuery plugin that automagically swaps out standard graphics for 2x versions in the presence of a retina display. 
+
+	</div>
 </header>
 <div role="main">
 
-	<img src="img/img.png" height="100" width="100" />
+	<div class="outerBox">
+	<h3>Downloads</h3>
+	<ul>
+		<li><a href="https://raw.github.com/mrballistic/JQuery-Retina/master/js/retina.js">retina.js</a></li>
+		<li><a href="https://raw.github.com/mrballistic/JQuery-Retina/master/js/retina.min.js">retina.min.js</a></li>
+		<li><a href="https://github.com/mrballistic/JQuery-Retina">Fork it on Github</a></li>
+	</ul>
+	
+	</div>
 
+	<div class="outerBox">
+
+	
+		<h3>Requirements</h3>
+		<ul>
+		<li><a href="http://docs.jquery.com/Downloading_jQuery">jQuery 1.6+</a><br /></li>
+		<li><a href="https://raw.github.com/mrballistic/JQuery-Retina/master/js/retina.min.js">minified version of the plugin</a><br /></li>
+		<li><code>&lt;img&gt;</code> tags with either heights and widths as attributes, or <code>&lt;div&gt;</code>s that constrain them.</li>
+		</ul>
+
+				
+		<h3>Usage</h3>
+		<ol>
+		<li>Load in the retina js file after your jQuery load, like this:<br />
+		<pre class="brush: js">
+		&lt;script src=&quot;js/retina.js&quot;&gt;&lt;/script&gt;</pre></li>
+		
+		<li>Place images into your page with the height and width defined as attributes:
+		<pre class="brush: xml">
+		&lt;img src=&quot;my_image.png&quot; height=&quot;100&quot; width=&quot;100&quot; /&gt;</pre></li>
+		
+		<li>Place an asset that's double the size as the first one, named the same with an "@2x" postfix, in the same directory. So, in this case, we'd have a 200px x 200px image called <code>my_image@2x.png</code>.<br /><br />
+		</li>
+		
+		<li>In your jQuery load script, enable the plugin:<br />
+		<pre class="brush: js">
+		$(function () { 
+	
+			$(document).retina();
+	
+		});</pre></li>
+		
+		<li><a href="http://en.wikipedia.org/wiki/Gnomes_(South_Park)">Profit!</a></li>
+		
+		</ol>
+	
+	</div>
 </div>
 <footer>
-
+	<div class="outerBox">
+	&copy;2012 <a href="mailto:mrballistic@gmail.com">mrBallistic</a>. <br />
+	Plugin usage governed by the <a href="http://www.opensource.org/licenses/mit-license.html">MIT License</a>. 
+	</div>
 </footer>
+
+<!--
+    
+    
+    	welcome to the src, baby!
+		coded with love by mrBallistic - @mrballistic
+                         ____        _ _ _     _   _      
+          _ __ ___  _ __| __ )  __ _| | (_)___| |_(_) ___ 
+         | '_ ` _ \| '__|  _ \ / _` | | | / __| __| |/ __|
+         | | | | | | |  | |_) | (_| | | | \__ \ |_| | (__ 
+         |_| |_| |_|_|  |____/ \__,_|_|_|_|___/\__|_|\___|
+                                                              
+                
+    
+ -->
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
-
+<script src="js/libs/shCore.js"></script>
+<script src="js/libs/shBrushJScript.js"></script>
+<script src="js/libs/shBrushXml.js"></script>
 <script src="js/retina.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/script.js"></script>
+
+
+<!-- google analytics -->
+<script type="text/javascript">
+//<![CDATA[
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1802954-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+//]]>
+</script>
+<!-- end google analytics -->
+
+
 </body>
 </html>
