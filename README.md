@@ -8,3 +8,5 @@ Usage:
 	$(document).retina();
 	
 Requires @2x image, and height and width of the image to be constrained either by the original img tag or the surrounding div.
+
+More info here: [mrballistic.com/retina](http://www.mrballistic.com/retina "retina.js main page") 
