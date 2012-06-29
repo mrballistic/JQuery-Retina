@@ -27,7 +27,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 (function( $ ) {
   $.fn.retina = function() {
   
-    if (window.devicePixelRatio == 2) {
+    if ((window.devicePixelRatio == 2)||(screen.width > 1680)) {
 		$('img').attr('src', function(e){
 		
 			var newImg = ""; // holds our path to the 2x asset
