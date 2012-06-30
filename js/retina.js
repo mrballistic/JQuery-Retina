@@ -1,28 +1,42 @@
+
+
 /*
+ * jQuery Retina - jQuery plugin for enabling retina display images
+ *
+ * Copyright (c) 2012 Todd Greco
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * Project home:
+ *   http://www.mrballistic.com/retina
+ *
+ * Version:  1.0.0
+ *
+ */
+ 
+ 
+ /*
+ 
 
-retina jquery plugin
-
-In the presence of a retina display, this script runs through all images, finds out if there's a 2x version, then swaps them out.
-
-Requires a @2x version of the asset to sit next to the original asset, and height/width to be constrained either by the original img tag or the surrounding div.
-
-So: 
-	img.png
-	img@2x.png
-	
-	<img src="img.png" height="100" width="100" />
-	
-	$(document).retina();
-
-Copyright (c) 2012 Todd Greco
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
+ In the presence of a retina display, this script runs through all images in the document, finds out if there's a 2x version, and, if so, swaps them out.
+ 
+ Requires a @2x version of the asset to sit next to the original asset, and height/width to be constrained either by the original img tag or the surrounding div.
+ 
+ So: 
+ 	img.png
+ 	img@2x.png
+ 	
+ 	<img src="img.png" height="100" width="100" />
+ 	
+ 	$(document).retina();
+ 
+ Certainly, this adds to the server connection load, but is very useful if you're not sure that there will be 2x assets available. If you're worried about load, just target a block inside of the document:
+ $('#uprez').retina();
+ 
+ 
 */
+ 
 
 (function( $ ) {
   $.fn.retina = function() {
