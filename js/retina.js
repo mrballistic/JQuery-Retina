@@ -11,7 +11,7 @@
  * Project home:
  *   http://www.mrballistic.com/retina
  *
- * Version:  1.0.0
+ * Version:  1.0.1
  *
  */
  
@@ -41,7 +41,7 @@
 (function( $ ) {
   $.fn.retina = function() {
   
-    if ((window.devicePixelRatio == 2)||(screen.width > 1680)) {
+    if ((window.devicePixelRatio == 2)||(screen.width > 1920)) {
 		$('img').attr('src', function(e){
 		
 			var newImg = ""; // holds our path to the 2x asset
