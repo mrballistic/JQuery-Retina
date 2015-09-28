@@ -11,7 +11,7 @@
  * Project home:
  *   http://www.mrballistic.com/retina
  *
- * Version:  1.0.1
+ * Version:  1.0.2
  *
  */
  
@@ -50,12 +50,18 @@
 			oldImg = oldImg.split('.'); // splits against "."
 			
 			var partLength = oldImg.length; // how many parts are there?
+			
 			for(i=0; i<partLength; i++){ 
 				
 				if(i<partLength -1){
 					newImg += oldImg[i]; // reassemble the front parts
 				} else {
 					newImg += "@2x." + oldImg[i]; // put on the tail
+					
+					if(oldImg[i]=="svg"){ // if there's an svg, we don't need to make an @2x version, do we
+						newImg=oldImg;
+					}
+					
 				}
 			}
 
