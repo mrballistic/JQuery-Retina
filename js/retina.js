@@ -3,7 +3,7 @@
 /*
  * jQuery Retina - jQuery plugin for enabling retina display images
  *
- * Copyright (c) 2012 Todd Greco
+ * Copyright (c) 2015 Todd Greco
  *
  * Licensed under the MIT license:
  *   http://www.opensource.org/licenses/mit-license.php
