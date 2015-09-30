@@ -11,7 +11,7 @@
  * Project home:
  *   http://www.mrballistic.com/retina
  *
- * Version:  1.0.2
+ * Version:  1.0.3
  *
  */
  
@@ -55,31 +55,38 @@
 				
 				if(i<partLength -1){
 					newImg += oldImg[i]; // reassemble the front parts
+
 				} else {
-					newImg += "@2x." + oldImg[i]; // put on the tail
 					
-					if(oldImg[i]=="svg"){ // if there's an svg, we don't need to make an @2x version, do we
-						newImg=oldImg;
+					if((oldImg[i]!="gif")&&(oldImg[i]!="jpg")&&(oldImg[i]!="jpeg")&&(oldImg[i]!="png")){ 
+						newImg=oldImg; // this isn't a raster img, so leave it alone
+					} else {
+						newImg += "@2x." + oldImg[i]; // put on the tail
 					}
 					
 				}
 			}
 
-			var thisImg = $(this); // this, in this scope, refers to the img
+			if(newImg!=oldImg){ // we've made a change!
+				
+				var thisImg = $(this); // this, in this scope, refers to the img
 			
-			// do a quickie ajax query to see if the 2x asset exists
-			$.ajax({
-			    url:newImg,
-			    type:'HEAD',
-			    error:
-			        function(){
-			            //log('img does not exist');
-			        },
-			    success:
-			        function(){
-			          thisImg.attr('src', newImg);
-			        }
-			 });
+				// do a quickie ajax query to see if the 2x asset exists
+				$.ajax({
+				    url:newImg,
+				    type:'HEAD',
+				    error:
+				        function(){
+				            //console.log('img does not exist');
+				        },
+				    success:
+				        function(){
+				          thisImg.attr('src', newImg);
+				        }
+				 });
+
+			}
+			
 		});
 	}
 
